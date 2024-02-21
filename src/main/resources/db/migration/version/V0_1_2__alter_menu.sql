@@ -1,0 +1,5 @@
+ALTER TABLE IF EXISTS idm_menu
+    DROP COLUMN IF EXISTS desktop,
+    DROP COLUMN IF EXISTS mobile,
+    DROP COLUMN IF EXISTS type_intra,
+    DROP COLUMN IF EXISTS type_internet;

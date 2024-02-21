@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS masterdata.building_detail_spacious (
+    building_detail_spacious_id     VARCHAR(255) NOT NULL,
+    branch_code                     varchar(4) NOT NULL,
+    suffix                          varchar(2) NOT NULL,
+    broad_category_id               uuid DEFAULT uuid_generate_v4 (),
+    floor               varchar(3) NOT NULL,
+    tenant              varchar(20) NOT NULL,
+    room_name           varchar(20) NOT NULL,
+    total_operational   numeric(14,2),
+    total_utility       numeric(14,2),
+    total_vacant        numeric(14,2),
+    total               numeric(16,2),
+    "version" int4 NULL DEFAULT 0,
+    created_at timestamp NULL,
+    created_by varchar(30) NULL,
+    modified_at timestamp NULL,
+    modified_by varchar(30) NULL,
+    CONSTRAINT building_detail_spacious_pk PRIMARY KEY (building_detail_spacious_id),
+    CONSTRAINT fk_suffix FOREIGN KEY (branch_code, suffix) REFERENCES masterdata.building (branch_code, suffix)
+);

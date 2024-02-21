@@ -1,0 +1,3 @@
+--DATA EXAMPLE
+--SELECT generate_application('GISTA', 'GISTA', null, true);
+--SELECT generate_application('NEWBI', 'NEWBI', null, true);
